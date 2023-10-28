@@ -10,11 +10,9 @@ const orderRoutes = require("./api/routes/orders");
 mongoose.connect(
   "mongodb+srv://bellobambo21:" +
     process.env.MONGO_ATLAS_PW +
-    "@cluster0.iqais4f.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useMongoClient: true,
-  }
+    "@cluster0.iqais4f.mongodb.net/?retryWrites=true&w=majority"
 );
+mongoose.Promise = global.Promise
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
