@@ -2,14 +2,23 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 const productsRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
+mongoose.connect(
+  "mongodb+srv://bellobambo21:" +
+    process.env.MONGO_ATLAS_PW +
+    "@cluster0.iqais4f.mongodb.net/?retryWrites=true&w=majority",
+  {
+    useMongoClient: true,
+  }
+);
+
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -23,7 +32,6 @@ app.use((req, res, next) => {
   }
   next();
 });
-
 
 app.use("/products", productsRoutes);
 app.use("/orders", orderRoutes);
