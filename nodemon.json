@@ -1,5 +1,6 @@
 {
-    "env" : {
-        "MONGO_ATLAS_PW" : "Ayodeji2001"
+    "env": {
+        "MONGO_ATLAS_PW": "Ayodeji2001",
+        "JWT_KEY": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY5ODYzOTA2NiwiaWF0IjoxNjk4NjM5MDY2fQ.p3Yd0XiWRoLCEB4XtX-Ak6vFPRgYgudP-_08UVrj78w"
     }
 }
